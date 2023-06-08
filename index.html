@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de link para WhatsApp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function gerarLink() {
+      var ddd = document.getElementById("ddd").value;
+      var numero = document.getElementById("numero").value;
+      var link = "https://web.whatsapp.com/send/?phone=" + ddd + numero + "&text&type=phone_number&app_absent=2";
+      document.getElementById("resultado").innerHTML = "<a href='" + link + "' class='btn btn-primary'>Clique aqui para abrir o WhatsApp</a>";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mt-5">Gerador de link para WhatsApp</h2>
+    <form>
+      <div class="form-group">
+        <label for="ddd">DDI:</label>
+        <select class="form-control" id="ddd" name="ddd">
+          <option value="55" selected>Brasil</option>
+          <option value="1">EUA</option>
+          <option value="54">Argentina</option>
+          <option value="595">Paraguai</option>
+          <!-- Adicione aqui mais opções de DDDs -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="numero">Número de telefone:</label>
+        <input type="text" class="form-control" id="numero" name="numero" required>
+      </div>
+      <button type="button" class="btn btn-success" onclick="gerarLink()">Gerar Link</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+  </div>
+</body>
+</html>
